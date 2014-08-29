@@ -92,6 +92,8 @@ public:
 	
 	IMPL_SETTING_STRINGLIST(HltPaths);
 	IMPL_SETTING_DEFAULT(bool, AllowPrescaledTrigger, true);
+
+        IMPL_SETTING_DEFAULT(std::string, TriggerEfficiencyQuantity, "");
 	
 	IMPL_SETTING_STRINGLIST(ElectronTriggerFilterNames);
 	IMPL_SETTING_STRINGLIST(MuonTriggerFilterNames);

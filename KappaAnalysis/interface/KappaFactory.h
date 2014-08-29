@@ -39,6 +39,7 @@
 
 // consumer
 #include "Artus/KappaAnalysis/interface/Consumers/KappaCutFlowHistogramConsumer.h"
+#include "Artus/KappaAnalysis/interface/Consumers/KappaTriggerResultsHistogramConsumer.h"
 #include "Artus/KappaAnalysis/interface/Consumers/KappaLambdaNtupleConsumer.h"
 
 
@@ -176,6 +177,8 @@ public:
 			return new KappaCutFlowHistogramConsumer<TTypes>();
 		else if(id == KappaLambdaNtupleConsumer<TTypes>().GetConsumerId())
 			return new KappaLambdaNtupleConsumer<TTypes>();
+		else if(id == KappaTriggerResultsHistogramConsumer<TTypes>().GetConsumerId())
+			return new KappaTriggerResultsHistogramConsumer<TTypes>();
 		else
 			return FactoryBase<TTypes>::createConsumer( id );
 	}
