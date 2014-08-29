@@ -46,7 +46,7 @@ public:
 	{
 		for(std::vector<std::string>::size_type i = 0; i != m_triggerPaths.size(); i++) {
 			if (event.m_eventMetadata->hltFired(product.m_hltInfo->getHLTName(m_triggerPaths[i]), event.m_lumiMetadata)){
-				m_triggerResultHists[i]->Fill((LambdaNtupleConsumer<TTypes>::Quantities[this->GetPipelineSettings().GetTriggerEfficiencyQuantity])(event, product);
+				m_triggerResultHists[i]->Fill((LambdaNtupleConsumer<TTypes>::Quantities[this->GetPipelineSettings().GetTriggerEfficiencyQuantity()])(event, product));
 			}
 		}
 	}
@@ -58,7 +58,7 @@ public:
 		                       this->GetPipelineSettings().GetRootFileFolder());
 		
 		for (TH1F* hist : m_triggerResultHists) {
-		hist->Write(hist->GetName());
+			hist->Write(hist->GetName());
 		}
 	
 	}
