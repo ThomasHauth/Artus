@@ -1,5 +1,9 @@
 #travis-ci file
 
+# the build machine is
+# Ubuntu 12.04 LTS acc. to 
+# http://docs.travis-ci.com/user/installing-dependencies/
+
 language: cpp
 compiler:
 - gcc
