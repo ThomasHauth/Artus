@@ -26,6 +26,7 @@ install:
 - cd boost_1_56_0
 - ./bootstrap.sh
 - sudo ./b2 install
+- cd ..
 # Ubuntu 12.04 LTS used as Travi-CI build machine does not have root in the package manager
 # run a custom compile here
 - wget ftp://root.cern.ch/root/root_v5.34.21.source.tar.gz
