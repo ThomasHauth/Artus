@@ -16,9 +16,16 @@ install:
 # g++4.8.1
 - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
 - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8"; fi
-- sudo apt-get install cmake libboost-dev libboost-system-dev libboost-program-options-dev
+- sudo apt-get install cmake #libboost-dev libboost-system-dev libboost-program-options-dev
 # root prequisites
 - sudo apt-get install libx11-dev libxpm-dev libxft-dev libxext-dev libpng12-0 libjpeg-dev python
+## retrieve recent boost version. The installed version has a buggy shared_ptr which 
+## does not work well with c++11 compiles
+- wget http://garr.dl.sourceforge.net/project/boost/boost/1.56.0/boost_1_56_0.tar.gz
+- tar zxf boost_1_56_0.tar.gz
+- cd boost_1_56_0
+- ./bootstrap.sh
+- sudo ./b2 install
 # Ubuntu 12.04 LTS used as Travi-CI build machine does not have root in the package manager
 # run a custom compile here
 - wget ftp://root.cern.ch/root/root_v5.34.21.source.tar.gz
