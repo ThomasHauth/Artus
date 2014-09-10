@@ -26,8 +26,9 @@ install:
 - cd root/
 - ./configure
 - make -j4
-- sudo make install
-- root-config --cflags
+- source bin/thisroot.sh
+#- sudo make install
+#- root-config --cflags
 #- sudo apt-get install root-system
 #before_script:
 #- mkdir _build
