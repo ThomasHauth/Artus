@@ -34,7 +34,8 @@ install:
 - cd root/
 - ./configure
 - make -j4
-- source bin/thisroot.sh
+- sudo make install
+- source /usr/local/root/bin/thisroot.sh
 - cd ..
 #- sudo make install
 #- root-config --cflags
