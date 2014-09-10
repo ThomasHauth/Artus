@@ -17,7 +17,16 @@ install:
 - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
 - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8"; fi
 - sudo apt-get install cmake libboost-dev libboost-system-dev libboost-program-options-dev
-- sudo apt-get install root-system
+# Ubuntu 12.04 LTS used as Travi-CI build machine does not have root in the package manager
+# run a custom compile here
+- wget ftp://root.cern.ch/root/root_v5.34.21.source.tar.gz
+- tar xzf root_v5.34.21.source.tar.gz
+- cd root/
+- ./configure
+- make -j4
+- sudo make install
+- root-config --cflags
+#- sudo apt-get install root-system
 #before_script:
 #- mkdir _build
 #- cd _build
